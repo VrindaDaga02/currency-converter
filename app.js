@@ -2,7 +2,7 @@ async function convertCurrency() {
   const amount = document.getElementById("amount").value;
   const from = document.getElementById("fromCurrency").value;
   const to = document.getElementById("toCurrency").value;
-
+ 
   if (!amount || isNaN(amount)) {
     alert("Please enter a valid amount");
     return;
