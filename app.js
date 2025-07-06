@@ -1,4 +1,4 @@
-async function convertCurrency() { 
+async function convertCurrency() {
   const amount = document.getElementById("amount").value;
   const from = document.getElementById("fromCurrency").value.toLowerCase();
   const to = document.getElementById("toCurrency").value.toLowerCase();
@@ -8,12 +8,12 @@ async function convertCurrency() {
     return;
   }
 
-  const url = `https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies/${from}/${to}.json`;
+  const url = `https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${from}.json`;
 
   try {
     const res = await fetch(url);
     const data = await res.json();
-    const rate = data[to];
+    const rate = data[from][to];
     const result = (amount * rate).toFixed(2);
     document.getElementById("result").innerText = `${amount} ${from.toUpperCase()} = ${result} ${to.toUpperCase()}`;
   } catch (error) {
