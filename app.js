@@ -2,14 +2,14 @@ async function convertCurrency() {
   const amount = document.getElementById("amount").value;
   const from = document.getElementById("fromCurrency").value;
   const to = document.getElementById("toCurrency").value;
- 
+
   if (!amount || isNaN(amount)) {
     alert("Please enter a valid amount");
     return;
   }
 
   const apiKey = "fca_live_MVpbkxpSOLlz8nsWlXDkX2YTiiBoAJS1GT4Jz6XV";
-  const url = `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${from}`;
+  const url = `https://api.freecurrencyapi.com/v1/latest?apikey=${apiKey}&base_currency=${from}&currencies=${to}`;
 
   try {
     const res = await fetch(url);
