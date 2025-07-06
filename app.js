@@ -1,4 +1,4 @@
-async function convertCurrency() {  
+async function convertCurrency() {
   const amount = document.getElementById("amount").value;
   const from = document.getElementById("fromCurrency").value.toLowerCase();
   const to = document.getElementById("toCurrency").value.toLowerCase();
