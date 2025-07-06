@@ -14,6 +14,12 @@ async function convertCurrency() {
     const res = await fetch(url);
     const data = await res.json();
     const rate = data[from][to];
+
+    if (!rate) {
+      document.getElementById("result").innerText = "Currency not supported.";
+      return;
+    }
+
     const result = (amount * rate).toFixed(2);
     document.getElementById("result").innerText = `${amount} ${from.toUpperCase()} = ${result} ${to.toUpperCase()}`;
   } catch (error) {
